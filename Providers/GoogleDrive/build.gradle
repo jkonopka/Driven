@@ -29,6 +29,7 @@ dependencies {
         exclude(group: 'junit', module: 'junit')
         exclude(group: 'com.google.android', module: 'android')
     }
+    compile 'com.google.android.gms:play-services-auth:11.0.4'
 
     // --- Dagger
     compile 'com.squareup.dagger:dagger:1.2.1'

@@ -88,7 +88,8 @@ interface GoogleDriveApi {
 
             private Drive createGoogleDriveService(Credential credential) {
                 GoogleAccountCredential account = createGoogleAccountCredential(credential.getContext(), credential.getAccountName());
-                return new Drive.Builder(AndroidHttp.newCompatibleTransport(), new AndroidJsonFactory(), account).build();
+                // JJK - added setAccountName to Drive.Builder...
+                return new Drive.Builder(AndroidHttp.newCompatibleTransport(), new AndroidJsonFactory(), account).setApplicationName("StageCallerTest").build();
             }
 
             private GoogleAccountCredential createGoogleAccountCredential(Context context, String username) {
