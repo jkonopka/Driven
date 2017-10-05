@@ -17,8 +17,11 @@ android {
 dependencies {
     compile project(':Library')
 
-    compile 'com.google.android.gms:play-services-drive:9.4.0'
-    compile 'com.google.android.gms:play-services-plus:9.4.0'
+//    compile 'com.google.android.gms:play-services-drive:9.4.0'
+//    compile 'com.google.android.gms:play-services-plus:9.4.0'
+    compile 'com.google.android.gms:play-services-drive:11.0.4'
+    compile 'com.google.android.gms:play-services-plus:11.0.4'
+
 }
 
-apply from: 'https://raw.github.com/chrisbanes/gradle-mvn-push/master/gradle-mvn-push.gradle'
+//apply from: 'https://raw.github.com/chrisbanes/gradle-mvn-push/master/gradle-mvn-push.gradle'
