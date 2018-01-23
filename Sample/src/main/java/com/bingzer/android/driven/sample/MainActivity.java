@@ -32,8 +32,8 @@ import com.bingzer.android.driven.contracts.Task;
 //import com.bingzer.android.driven.dropbox.app.DropboxActivity;
 import com.bingzer.android.driven.gdrive.GoogleDrive;
 import com.bingzer.android.driven.gdrive.app.GoogleDriveActivity;
-import com.bingzer.android.driven.gmsdrive.GmsDrive;
-import com.bingzer.android.driven.gmsdrive.app.GmsDriveActivity;
+//import com.bingzer.android.driven.gmsdrive.GmsDrive;
+//import com.bingzer.android.driven.gmsdrive.app.GmsDriveActivity;
 import com.bingzer.android.driven.local.ExternalDrive;
 import com.bingzer.android.driven.local.app.ExternalDriveActivity;
 import com.bingzer.android.driven.utils.MimeTypes;
@@ -52,10 +52,10 @@ public class MainActivity extends AppCompatActivity implements ActionBar.OnNavig
     private static final String TAG = "MainActivity";
     private static final int REQUEST_PICK_FILE = 102;
     private StorageProvider gdrive = new GoogleDrive();
-    private StorageProvider gmsDrive = new GmsDrive();
+//    private StorageProvider gmsDrive = new GmsDrive();
 //    private StorageProvider dropbox = new Dropbox();
     private StorageProvider externalDrive = new ExternalDrive();
-    private StorageProvider storageProvider = gmsDrive;
+    private StorageProvider storageProvider = gdrive;
 
     private List<RemoteFile> files;
     private RemoteFile parent;
@@ -123,14 +123,14 @@ public class MainActivity extends AppCompatActivity implements ActionBar.OnNavig
             return true;
         }
         if(getString(R.string.google_drive_gms).equals(provider)){
-            if(!gmsDrive.isAuthenticated()){
-                GmsDriveActivity.launch(this);
-            }
-            else{
-                storageProvider = gmsDrive;
-                breadcrumbs.clear();
-                list(null);
-            }
+//            if(!gmsDrive.isAuthenticated()){
+//                GmsDriveActivity.launch(this);
+//            }
+//            else{
+//                storageProvider = gmsDrive;
+//                breadcrumbs.clear();
+//                list(null);
+//            }
             return true;
         }
         else if(getString(R.string.dropbox).equals(provider)){
@@ -172,9 +172,9 @@ public class MainActivity extends AppCompatActivity implements ActionBar.OnNavig
                 case ExternalDriveActivity.REQUEST_LOGIN:
                     storageProvider = externalDrive;
                     break;
-                case GmsDriveActivity.REQUEST_LOGIN:
-                    storageProvider = gmsDrive;
-                    break;
+//                case GmsDriveActivity.REQUEST_LOGIN:
+//                    storageProvider = gmsDrive;
+//                    break;
                 case REQUEST_PICK_FILE:
                     String path = Media.getPath(this, data);
                     File file = new File(path);
@@ -291,7 +291,7 @@ public class MainActivity extends AppCompatActivity implements ActionBar.OnNavig
     private boolean clearCredentials(){
         gdrive.clearSavedCredential(this);
 //        dropbox.clearSavedCredential(this);
-        gmsDrive.clearSavedCredential(this);
+//        gmsDrive.clearSavedCredential(this);
         return true;
     }
 

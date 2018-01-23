@@ -19,11 +19,13 @@ dependencies {
     compile project(':Library')
     // --- Google Drive
     //compile 'com.google.apis:google-api-services-drive:v2-rev123-1.18.0-rc'
-    compile(group: 'com.google.apis', name: 'google-api-services-drive', version: 'v2-rev156-1.19.1') {
+//    compile(group: 'com.google.apis', name: 'google-api-services-drive', version: 'v2-rev156-1.19.1') {
+    compile(group: 'com.google.apis', name: 'google-api-services-drive', version: 'v2-rev293-1.23.0') {
         exclude(group: 'org.apache.httpcomponents', module: 'httpclient')
     }
     //compile 'com.google.api-client:google-api-client-android:1.18.0-rc'
-    compile(group: 'com.google.api-client', name: 'google-api-client-android', version: '1.19.1') {
+//    compile(group: 'com.google.api-client', name: 'google-api-client-android', version: '1.19.1') {
+    compile(group: 'com.google.api-client', name: 'google-api-client-android', version: '1.23.0') {
         // Exclude artifacts that the Android SDK/Runtime provides.
         exclude(group: 'xpp3', module: 'xpp3')
         exclude(group: 'org.apache.httpcomponents', module: 'httpclient')

@@ -1,3 +1,4 @@
 include ':Library'
-include 'Providers:GoogleDrivePlayServices', ':Providers:ExternalDrive', ':Providers:GoogleDrive'
+include  ':Providers:ExternalDrive', ':Providers:GoogleDrive'
 include ':Sample' // Uncomment to include sample
+// 'Providers:GoogleDrivePlayServices',
