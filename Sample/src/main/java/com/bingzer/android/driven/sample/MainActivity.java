@@ -8,7 +8,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.support.v7.app.ActionBar;
-import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -47,7 +47,7 @@ import java.util.UUID;
  * This is a quick sample activity which shows different providers.
  * The code is messy :D
  */
-public class MainActivity extends ActionBarActivity implements ActionBar.OnNavigationListener{
+public class MainActivity extends AppCompatActivity implements ActionBar.OnNavigationListener{
 
     private static final String TAG = "MainActivity";
     private static final int REQUEST_PICK_FILE = 102;
