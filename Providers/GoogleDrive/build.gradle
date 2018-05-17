@@ -12,7 +12,7 @@ android {
         versionCode Integer.parseInt(project.VERSION_CODE)
         versionName project.VERSION_NAME
     }
-    buildToolsVersion '26.0.2'
+//    buildToolsVersion '26.0.2'
 }
 
 dependencies {
