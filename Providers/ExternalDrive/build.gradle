@@ -3,14 +3,18 @@ project.ext.set("archivesBaseName", "driven-extdrive");
 apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion Integer.parseInt(project.VERSION_SDK)
-    buildToolsVersion project.VERSION_TOOLS
+    compileSdkVersion 27
+    buildToolsVersion '27.0.3'
 
     defaultConfig {
-        minSdkVersion Integer.parseInt(project.VERSION_SDK_MIN)
-        targetSdkVersion Integer.parseInt(project.VERSION_SDK_TARGET)
-        versionCode Integer.parseInt(project.VERSION_CODE)
-        versionName project.VERSION_NAME
+        minSdkVersion 16
+        targetSdkVersion 27
+        versionCode 4
+        versionName "1.2.4"
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
     }
 }
 

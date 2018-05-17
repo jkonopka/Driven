@@ -21,11 +21,16 @@ allprojects {
     repositories {
         mavenCentral()
         google()
+        jcenter()
         maven {
             url "https://maven.google.com" // Google's Maven repository
         }
 
     }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
 }
 
 apply plugin: 'android-reporting'

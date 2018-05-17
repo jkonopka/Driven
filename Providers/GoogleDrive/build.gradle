@@ -3,39 +3,42 @@ project.ext.set("archivesBaseName", "driven-gdrive");
 apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion Integer.parseInt(project.VERSION_SDK)
-    buildToolsVersion project.VERSION_TOOLS
+    compileSdkVersion 27
+    buildToolsVersion '27.0.3'
 
     defaultConfig {
-        minSdkVersion Integer.parseInt(project.VERSION_SDK_MIN)
-        targetSdkVersion Integer.parseInt(project.VERSION_SDK_TARGET)
-        versionCode Integer.parseInt(project.VERSION_CODE)
-        versionName project.VERSION_NAME
+        minSdkVersion 16
+        targetSdkVersion 27
+        versionCode 4
+        versionName "1.2.4"
     }
-//    buildToolsVersion '26.0.2'
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
 }
 
 dependencies {
     implementation project(':Library')
     // --- Google Drive
     //compile 'com.google.apis:google-api-services-drive:v2-rev123-1.18.0-rc'
-//    compile(group: 'com.google.apis', name: 'google-api-services-drive', version: 'v2-rev156-1.19.1') {
-//    compile(group: 'com.google.apis', name: 'google-api-services-drive', version: 'v2-rev293-1.23.0') {
-    implementation(group: 'com.google.apis', name: 'google-api-services-drive', version: 'v2-rev313-1.23.0') {
+    //    compile(group: 'com.google.apis', name: 'google-api-services-drive', version: 'v2-rev156-1.19.1') {
+    //    compile(group: 'com.google.apis', name: 'google-api-services-drive', version: 'v2-rev293-1.23.0') {
+    implementation('com.google.apis:google-api-services-drive:v2-rev313-1.23.0') {
         exclude(group: 'org.apache.httpcomponents', module: 'httpclient')
     }
     //compile 'com.google.api-client:google-api-client-android:1.18.0-rc'
-//    compile(group: 'com.google.api-client', name: 'google-api-client-android', version: '1.19.1') {
-    implementation(group: 'com.google.api-client', name: 'google-api-client-android', version: '1.23.0') {
+    //    compile(group: 'com.google.api-client', name: 'google-api-client-android', version: '1.19.1') {
+    implementation('com.google.api-client:google-api-client-android:1.23.0') {
         // Exclude artifacts that the Android SDK/Runtime provides.
         exclude(group: 'xpp3', module: 'xpp3')
         exclude(group: 'org.apache.httpcomponents', module: 'httpclient')
         exclude(group: 'junit', module: 'junit')
         exclude(group: 'com.google.android', module: 'android')
     }
-//    compile 'com.google.android.gms:play-services-auth:11.0.4'
+    //    compile 'com.google.android.gms:play-services-auth:11.0.4'
     implementation 'com.google.android.gms:play-services-auth:15.0.1'
-
     // --- Dagger
     implementation 'com.squareup.dagger:dagger:1.2.1'
     androidTestCompileOnly 'com.squareup.dagger:dagger-compiler:1.2.1'
